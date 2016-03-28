@@ -27,6 +27,7 @@ ln -s ${BASEDIR}/vimrc ~/.vimrc
 ln -s ${BASEDIR}/zshrc ~/.zshrc
 ln -s ${BASEDIR}/tmux.conf ~/.tmux.conf
 ln -s ${BASEDIR}/hgrc ~/.hgrc
+ln -s ${BASEDIR}/gitconfig ~/.gitconfig
 
 # Link this folder to .dotfiles so can be referenced elsewhere
 ln -s ${BASEDIR} ~/.dotfiles
