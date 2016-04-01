@@ -14,6 +14,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
+Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'justinmk/vim-sneak'
 Plugin 'ludovicchabant/vim-lawrencium'
 Plugin 'mhinz/vim-signify'
