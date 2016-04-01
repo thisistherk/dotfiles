@@ -21,6 +21,7 @@ Plugin 'mhinz/vim-signify'
 Plugin 'rking/ag.vim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'tmux-plugins/vim-tmux'
 
 call vundle#end()
 
