@@ -8,7 +8,7 @@ export ZSH=/Users/rich/.oh-my-zsh
 COMPLETION_WAITING_DOTS="true"
 
 # Plugins to install
-plugins=(brew git history mercurial tmux web-search z zsh-syntax-highlighting)
+plugins=(brew git history mercurial tmux web-search z zsh-completions zsh-syntax-highlighting)
 
 # Set path
 export PATH="~/.dotfiles/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"

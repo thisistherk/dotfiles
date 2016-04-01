@@ -19,8 +19,9 @@ brew install cmake cmus htop git mercurial ninja the_silver_searcher tmux vim wg
 # Install oh-my-zsh
 [[ -d ~/.oh-my-zsh ]] || curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
-# Install zsh-syntax-highlighting
+# Install zsh-syntax-highlighting/completions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone git://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions
 
 # Link config files
 ln -s ${BASEDIR}/vimrc ~/.vimrc
