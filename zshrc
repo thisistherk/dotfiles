@@ -25,6 +25,9 @@ export KEYTIMEOUT=1
 # Link to brew zsh-completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 
+# Autoload zsh-completions
+autoload -U compinit && compinit
+
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
 
