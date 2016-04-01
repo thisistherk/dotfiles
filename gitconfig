@@ -3,3 +3,5 @@
 	email = rich@funkypixels.com
 [core]
 	editor = vim
+[push]
+	default = simple
