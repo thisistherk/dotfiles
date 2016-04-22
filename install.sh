@@ -23,6 +23,12 @@ brew install cmake cmus htop git mercurial ninja the_silver_searcher tmux vim wg
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone git://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions
 
+# Remove existing .zshrc - will link to ours instead
+rm ~/.zshrc
+
+# Install tmux plugin manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # Link config files
 ln -s ${BASEDIR}/vimrc ~/.vimrc
 ln -s ${BASEDIR}/zshrc ~/.zshrc
@@ -33,9 +39,6 @@ ln -s ${BASEDIR}/gitconfig ~/.gitconfig
 # Link this folder to .dotfiles so can be referenced elsewhere
 ln -s ${BASEDIR} ~/.dotfiles
 
-# Install cask
-brew tap caskroom/cask
-
-# Install apps
-brew cask install --appdir="/Applications" google-chrome dropbox 1password iterm2 suspicious-package
+# Install vim plugins
+vim +PluginInstall +qall
 
