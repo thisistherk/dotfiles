@@ -14,7 +14,7 @@ fi
 brew update
 
 # Install various stuff via brew
-brew install cmake cmus htop git mercurial ninja the_silver_searcher tmux vim wget zsh zsh-completions
+brew install cmake cmus htop git mercurial ninja reattach-to-user-namepace the_silver_searcher tmux vim wget zsh zsh-completions
 
 # Install oh-my-zsh
 [[ -d ~/.oh-my-zsh ]] || curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
