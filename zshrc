@@ -8,13 +8,17 @@ export ZSH=/Users/rich/.oh-my-zsh
 COMPLETION_WAITING_DOTS="true"
 
 # Plugins to install
-plugins=(brew git history mercurial tmux web-search z zsh-completions zsh-syntax-highlighting)
+plugins=(brew git history history-substring-search mercurial tmux web-search z zsh-completions zsh-syntax-highlighting)
 
 # Set path
 export PATH="~/.dotfiles/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # Set up oh-my-zsh
 source $ZSH/oh-my-zsh.sh
+
+# Bind up/down to history
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
 
 # Vi mode for editing
 bindkey -v
