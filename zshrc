@@ -11,7 +11,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(brew git history history-substring-search mercurial tmux web-search z zsh-completions zsh-syntax-highlighting)
 
 # Set path
-export PATH="~/.dotfiles/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$HOME/.dotfiles/bin:$HOME/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # Set up oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -27,7 +27,7 @@ bindkey -v
 export KEYTIMEOUT=1
 
 # Link to brew zsh-completions
-fpath=(/usr/local/share/zsh-completions $fpath)
+fpath=(/usr/local/share/zsh/site-functions /usr/local/share/zsh-completions $fpath)
 
 # Autoload zsh-completions
 autoload -U compinit && compinit
@@ -104,7 +104,7 @@ git_prompt_string() {
 
 # VIM mode on/off status
 function zle-line-init zle-keymap-select {
-    VIM_PROMPT="%{$fg_bold[white]%} [% VIM]% %{$reset_color%}"
+    VIM_PROMPT="%{$fg_bold[red]%} [% VIM]% %{$reset_color%}"
     RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $(git_prompt_string) $EPS1"
     zle reset-prompt
 }
@@ -114,7 +114,10 @@ zle -N zle-keymap-select
 
 
 # Simple prompt
-export PROMPT='%{$fg[white]%}%* %{$fg[cyan]%}%1~ %{$fg[blue]%}➜  %{$reset_color%}'
+export PROMPT='%{$reset_color%}%* %{$fg[cyan]%}%1~ %{$fg[blue]%}➜  %{$reset_color%}'
 
+# Rust stuff
+export CARGO_HOME="$HOME/.cargo"
+export RUST_SRC_PATH="$CARGO_HOME/rustc-nightly-1.12/src"
 
 

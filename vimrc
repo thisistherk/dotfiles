@@ -14,14 +14,19 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
+Plugin 'chiel92/vim-autoformat'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'justinmk/vim-sneak'
 Plugin 'ludovicchabant/vim-lawrencium'
 Plugin 'mhinz/vim-signify'
+Plugin 'racer-rust/vim-racer'
+Plugin 'rizzatti/dash.vim'
 Plugin 'rking/ag.vim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'tikhomirov/vim-glsl'
 Plugin 'tmux-plugins/vim-tmux'
+Plugin 'vim-jp/vim-cpp'
 
 call vundle#end()
 
@@ -33,7 +38,7 @@ filetype plugin indent on
 syntax on
 
 " Colourscheme
-set background=dark
+set background=light
 colorscheme solarized
 
 " Highlight cursor line
@@ -138,3 +143,11 @@ set smartcase
 " Disable swap files
 set noswapfile
 
+" Rust configuration
+let g:formatdef_rustfmt = '"rustfmt"'
+let g:formatters_rust = ['rustfmt']
+let g:rustc_path = $HOME."/.cargo/bin/rustc"
+let g:racer_cmd = $HOME."/.cargo/bin/racer"
+let $RUST_SRC_PATH = $HOME."/.cargo/rustc-nightly-1.12/src"
+
+set omnifunc=syntaxcomplete#Complete
