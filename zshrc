@@ -10,8 +10,11 @@ COMPLETION_WAITING_DOTS="true"
 # Plugins to install
 plugins=(brew git history history-substring-search mercurial tmux web-search z zsh-completions zsh-syntax-highlighting)
 
+# Set Go path
+export GOPATH="$HOME/go"
+
 # Set path
-export PATH="$HOME/.dotfiles/bin:$HOME/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$HOME/.dotfiles/bin:$GOPATH/bin:$HOME/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # Set up oh-my-zsh
 source $ZSH/oh-my-zsh.sh
