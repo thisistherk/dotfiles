@@ -21,7 +21,10 @@ Plugin 'altercation/vim-colors-solarized'   " Colour scheme
 Plugin 'bling/vim-airline'                  " Status bar plugin
 Plugin 'chiel92/vim-autoformat'             " Integration with code formatters (clang-format etc)
 Plugin 'christoomey/vim-tmux-navigator'     " Use tmux keys to move between windows
+Plugin 'fatih/vim-go'                       " Go plugin
 Plugin 'flowtype/vim-flow'                  " Javascript type checking
+Plugin 'junegunn/fzf'                       " Fuzzy search bindings
+Plugin 'junegunn/fzf.vim'                   " Fuzzy search bindings
 Plugin 'justinmk/vim-sneak'                 " Motion to jump to characters
 Plugin 'ludovicchabant/vim-lawrencium'      " Mercurial integration
 Plugin 'mhinz/vim-signify'                  " Diffs in left-hand column
@@ -32,7 +35,7 @@ Plugin 'scrooloose/nerdcommenter'           " Comment out blocks of code
 Plugin 'tikhomirov/vim-glsl'                " GLSL syntax highlighting
 Plugin 'tmux-plugins/vim-tmux'              " Syntax highlighting for tmux.conf
 Plugin 'tpope/vim-surround'                 " Quotes and parenthesis handling
-Plugin 'Valloric/YouCompleteMe'             " Code completion
+Plugin 'tpope/vim-sleuth'                   " Auto-detect tabstop/shiftwidth
 Plugin 'vim-jp/vim-cpp'                     " C++11 syntax highlighting
 
 call vundle#end()
@@ -56,6 +59,7 @@ set lazyredraw          " Don't redraw during macros
 set vb t_vb=            " Disable beep/flash
 set backspace=indent,eol,start  " Proper backspace behaviour
 set mouse=              " Disable mouse
+set path+=src           " Add 'src' to gf (goto file) path
 
 " }}}
 
@@ -141,6 +145,7 @@ let g:airline_powerline_fonts=1
 let mapleader = ","     " Remap leader to ','
 let g:mapleader = ","
 
+nmap <Leader>b :Buffers<CR>
 
 " }}}
 

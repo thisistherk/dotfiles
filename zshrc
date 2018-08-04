@@ -14,7 +14,7 @@ plugins=(brew git history history-substring-search mercurial tmux web-search z z
 export GOPATH="$HOME/go"
 
 # Set path
-export PATH="$HOME/.dotfiles/bin:$GOPATH/bin:$HOME/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/opt/llvm/bin:$HOME/bin:$GOPATH/bin:$HOME/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # Set up oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -123,4 +123,13 @@ export PROMPT='%{$reset_color%}%* %{$fg[cyan]%}%1~ %{$fg[blue]%}➜  %{$reset_co
 export CARGO_HOME="$HOME/.cargo"
 export RUST_SRC_PATH="$CARGO_HOME/rustc-nightly-1.12/src"
 
+# FZF command from https://medium.com/@crashybang/supercharge-vim-with-fzf-and-ripgrep-d4661fc853d2
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+
+# Path to Vulkan SDK
+export VULKAN_SDK=/Users/rich/VulkanSDK
+export VK_LAYER_PATH=$VULKAN_SDK/macOS/etc/vulkan/explicit_layers.d
+export VK_ICD_FILENAMES=$VULKAN_SDK/macOS/etc/vulkan/icd.d/MoltenVK_icd.json
+export PATH=$VULKAN_SDK/macOS/bin:$PATH
+export DYLD_LIBRARY_PATH=$VULKAN_SDK/macOS/lib:$DYLD_LIBRARY_PATH
 

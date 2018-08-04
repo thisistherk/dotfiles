@@ -14,11 +14,7 @@ fi
 brew update
 
 # Install various stuff via brew
-brew install clang-format cmake cmus htop git mercurial ninja reattach-to-user-namepace the_silver_searcher tmux vim wget zsh zsh-completions
-
-# Install 1password command line utility
-brew tap ravenac95/sudolikeaboss
-brew install sudolikeaboss
+brew install clang-format cmake fzf htop git mercurial ninja reattach-to-user-namepace ripgrep the_silver_searcher tmux vim wget zsh zsh-completions
 
 # Install oh-my-zsh
 [[ -d ~/.oh-my-zsh ]] || curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
