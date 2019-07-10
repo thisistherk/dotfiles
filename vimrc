@@ -28,6 +28,7 @@ Plugin 'junegunn/fzf.vim'                   " Fuzzy search bindings
 Plugin 'justinmk/vim-sneak'                 " Motion to jump to characters
 Plugin 'ludovicchabant/vim-lawrencium'      " Mercurial integration
 Plugin 'mhinz/vim-signify'                  " Diffs in left-hand column
+Plugin 'rhysd/vim-clang-format'             " clang-format integration
 Plugin 'rizzatti/dash.vim'                  " Integration with Dash
 Plugin 'rking/ag.vim'                       " Integration with Silver Searcher
 Plugin 'rust-lang/rust.vim'                 " Rust syntax highlighting
@@ -150,14 +151,12 @@ nmap <Leader>b :Buffers<CR>
 " }}}
 
 " Rust {{{
-
-let g:formatdef_rustfmt = '"rustfmt"'
-let g:formatters_rust = ['rustfmt']
-let g:rustc_path = $HOME."/.cargo/bin/rustc"
-let g:racer_cmd = $HOME."/.cargo/bin/racer"
-let $RUST_SRC_PATH = $HOME."/.cargo/rustc-nightly-1.12/src"
-
+let g:rustfmt_autosave = 1
 " }}}
 
+" clang-format {{{
+let g:clang_format#detect_style_file = 1        " Use .clang-format file in project folder
+let g:clang_format#auto_format = 0              " Format on write
+" }}}
 
 " vim:foldmethod=marker:foldlevel=0

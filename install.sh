@@ -14,17 +14,7 @@ fi
 brew update
 
 # Install various stuff via brew
-brew install clang-format cmake fzf htop git mercurial ninja reattach-to-user-namepace ripgrep the_silver_searcher tmux vim wget zsh zsh-completions
-
-# Install oh-my-zsh
-[[ -d ~/.oh-my-zsh ]] || curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-
-# Install zsh-syntax-highlighting/completions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone git://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions
-
-# Remove existing .zshrc - will link to ours instead
-rm ~/.zshrc
+brew install clang-format cmake fish fzf htop git mercurial ninja reattach-to-user-namepace ripgrep the_silver_searcher tmux vim wget
 
 # Install tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -35,6 +25,7 @@ ln -s ${BASEDIR}/zshrc ~/.zshrc
 ln -s ${BASEDIR}/tmux.conf ~/.tmux.conf
 ln -s ${BASEDIR}/hgrc ~/.hgrc
 ln -s ${BASEDIR}/gitconfig ~/.gitconfig
+ln -s ${BASEDIR}/config.fish ~/.config/fish/config.fish
 
 # Link this folder to .dotfiles so can be referenced elsewhere
 ln -s ${BASEDIR} ~/.dotfiles
