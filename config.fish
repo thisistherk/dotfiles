@@ -1,10 +1,16 @@
 
 
+# Vulkan SDK
+set --export VULKAN_SDK $HOME/vulkansdk-macos-1.1.108.0/macOS
+set --export DYLD_LIBRARY_PATH $VULKAN_SDK/lib:$DYLD_LIBRARY_PATH
+set --export VK_LAYER_PATH $VULKAN_SDK/etc/vulkan/explicit_layer.d
+set --export VK_ICD_FILENAMES $VULKAN_SDK/etc/vulkan/icd.d/MoltenVK_icd.json
+
 # Set Go path
 set --export GOPATH $HOME/go
 
 # Set path
-set -U fish_user_paths /usr/local/opt/llvm/bin $HOME/bin $GOPATH/bin $HOME/.cargo/bin
+set -U fish_user_paths /usr/local/opt/llvm/bin $HOME/bin $GOPATH/bin $HOME/.cargo/bin $VULKAN_SDK/bin
 
 # Preferred editor for local and remote sessions
 set --export EDITOR vim
@@ -20,13 +26,6 @@ set --export FZF_DEFAULT_COMMAND rg --files --no-ignore --hidden --follow --glob
 
 # Work around SIP DYLD_LIBRARY_PATH issues with default lldb in /usr/bin
 alias lldb /Applications/Xcode.app/Contents/Developer/usr/bin/lldb
-
-# Vulkan SDK
-set --export VULKAN_SDK $HOME/vulkansdk-macos-1.1.108.0/macOS
-set --export PATH $VULKAN_SDK/bin:$PATH
-set --export DYLD_LIBRARY_PATH $VULKAN_SDK/lib:$DYLD_LIBRARY_PATH
-set --export VK_LAYER_PATH $VULKAN_SDK/etc/vulkan/explicit_layer.d
-set --export VK_ICD_FILENAMES $VULKAN_SDK/etc/vulkan/icd.d/MoltenVK_icd.json
 
 # Switch to vi mode
 fish_vi_key_bindings
@@ -50,7 +49,8 @@ function fish_right_prompt
     if test $fish_bind_mode = default
         set_color red
         echo "[VI]"
-        set_color normal
     end
+    set_color yellow
+    printf " %s" (__fish_git_prompt)
 end
 
